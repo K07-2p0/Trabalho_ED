@@ -2,19 +2,14 @@ package src.model.player;
 
 import src.model.map.Room;
 
-/**
- * Representa um jogador no Labirinto da Glória.
- * É uma classe abstrata que serve de base para jogadores humanos (manuais) e bots.
- * A implementação das ações de jogo específicas (como escolher o próximo movimento)
- * será definida nas subclasses.
- */
+
 public abstract class Player {
 
-    // Identificador único do jogador
+    // ID do jogador
     private final String id;
-    // Nome a ser exibido
+    // Nome do jogador
     private final String name;
-    // Posição atual do jogador no mapa (uma Sala)
+    // Posição do jogador
     private Room currentRoom;
     // Número de turnos que o jogador fica impedido de jogar
     private int turnsBlocked;
