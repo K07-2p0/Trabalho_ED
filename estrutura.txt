@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 /src 
   /model 
     /map 
@@ -27,4 +28,35 @@
       Strategy.java 
       RandomStrategy.java 
       SimpleHeuristicStrategy.java 
+=======
+/src
+  /model
+    /map
+      Room.java - Para cada sala
+      Corridor.java
+      Lever.java
+      Riddle.java
+      Event.java
+      MapGraph.java   ← usa as tuas próprias estruturas (listas, grafos, etc.)
+    /player
+      Player.java
+      BotPlayer.java
+  /engine
+      GameEngine.java
+      TurnManager.java
+      EventProcessor.java
+      RiddleManager.java
+  /api
+    api_das_estruturas_de_dados_feita_durante_as_aulas
+  /io
+      MapLoader.java     ← usa biblioteca para ler JSON
+      MapWriter.java
+      ReportWriter.java
+  /ui
+      CLI.java           ← modo manual (texto)
+  /ai
+      Strategy.java
+      RandomStrategy.java
+      SimpleHeuristicStrategy.java
+>>>>>>> Stashed changes
 /Main.java
