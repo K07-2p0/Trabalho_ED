@@ -1,4 +1,4 @@
-package src.ai;
+package src.bot;
 
 import src.model.map.Room;
 import Lists.DoublyLinkedList;
@@ -9,7 +9,6 @@ import java.util.Iterator;
 
 public class RandomStrategy implements Strategy {
 
-    @Override
     public Room determineMove(Room currentRoom, Object availableRooms) {
         // O parâmetro availableRooms é o seu DoublyLinkedList<Room>
         
