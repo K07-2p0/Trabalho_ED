@@ -1,32 +1,26 @@
 package src.model.map;
 
-/**
- * Representa uma Divisão (Room) no Labirinto, que é um vértice no MapGraph.
- */
 public class Room {
     private final String id;
     private final String name;
     private final RoomType type;
     private boolean isLocked; // Controla o bloqueio por Alavanca/Enigma [cite: 37, 39]
 
-    /**
-     * Tipos de salas conforme o enunciado.
-     */
+
     public enum RoomType {
-        ENTRY,      // Pontos de entrada [cite: 26]
-        CENTRAL,    // Sala do Tesouro (vitória) [cite: 25, 50]
-        LEVER,      // Divisão com Alavanca [cite: 27]
-        RIDDLE,     // Divisão com Enigma [cite: 27]
+        ENTRY,      // Pontos de entrada 
+        CENTRAL,    // Sala do Tesouro (vitória) 
+        LEVER,      // Divisão com Alavanca 
+        RIDDLE,     // Divisão com Enigma 
         NORMAL
     }
 
-    /**
-     * Construtor de Room.
-     */
+
     public Room(String id, String name, RoomType type) {
         this.id = id;
         this.name = name;
         this.type = type;
+        
         // Salas com alavancas/enigmas começam bloqueadas
         this.isLocked = (type == RoomType.LEVER || type == RoomType.RIDDLE); 
     }
