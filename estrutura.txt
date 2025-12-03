@@ -34,7 +34,7 @@ LabirintoDaGloria/
 │   │           └── EditorMapa.java    // Funcionalidade extra pedida no enunciado
 │
 ├── lib/                                // 📦 Bibliotecas Externas
-│   └── EstruturasDeDados.jar           // Sua API de Estruturas de Dados (OBRIGATÓRIO USAR ESTA!)
+│   └── EstruturasDeDados.jar           // Sua API de Estruturas de Dados
 │
 ├── resources/                          // 💾 Ficheiros de Dados, Mapas e Imagens
 │   ├── mapas/
