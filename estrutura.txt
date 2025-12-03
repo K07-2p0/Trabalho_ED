@@ -1,29 +1,51 @@
-/src
-  /model
-    /map
-      Room.java - Para cada sala
-      Corridor.java
-      Lever.java
-      Riddle.java
-      Event.java
-      MapGraph.java   ← usa as tuas próprias estruturas (listas, grafos, etc.)
-    /player
-      Player.java
-      BotPlayer.java
-  /engine
-      GameEngine.java
-      TurnManager.java
-      EventProcessor.java
-      RiddleManager.java
-  /io
-      MapLoader.java     ← usa biblioteca para ler JSON
-      MapWriter.java
-      ReportWriter.java
-  /ui
-      CLI.java           ← modo manual (texto)
-  /bot
-      Strategy.java
-      RandomStrategy.java
-      SimpleHeuristicStrategy.java
-  api.jar - api_das_estruturas_de_dados_feita_durante_as_aulas
-/Main.java
+LabirintoDaGloria/
+├── src/                                // Código-fonte principal
+│   ├── core/                           // Pacotes de domínio e lógica
+│   │   ├── model/                     // ENTIDADES (O "Quem" e o "O quê")
+│   │   │   ├── divisao/
+│   │   │   │   ├── Divisao.java       // (Abstract) Representa um vértice do grafo
+│   │   │   │   ├── PontoPartida.java  // Divisão normal / Comum
+│   │   │   │   ├── SalaTesouro.java   // O objetivo final (Sala Central)
+│   │   │   │   ├── SalaEnigma.java    // Tem uma pergunta associada
+│   │   │   │   └── SalaAlavanca.java  // Pode bloquear/desbloquear arestas
+│   │   │   │
+│   │   │   ├── itens/
+│   │   │   │   ├── Corredor.java      // Representa a Aresta (Edge). Guarda o "peso" e eventos
+│   │   │   │   ├── Enigma.java        // Classe para guardar Pergunta/Resposta/Pontos
+│   │   │   │   └── Evento.java        // Enum ou Classe para eventos (Recuar, Trocar, etc.)
+│   │   │   │
+│   │   │   └── ator/
+│   │   │       ├── Jogador.java       // (Abstract)
+│   │   │       ├── JogadorHumano.java
+│   │   │       ├── JogadorBot.java
+│   │   │       └── Historico.java     // Guarda os logs do jogador
+│   │   │
+│   │   ├── game/                      // LÓGICA (O motor do jogo)
+│   │   │   ├── MotorJogo.java         // Controla os turnos e regras de vitória
+│   │   │   ├── GestorMapa.java        // Gere o Grafo (Network)
+│   │   │   └── MovimentoStrategy.java // Interface para definir como Bots se movem
+│   │   │
+│   │   ├── io/                        // LEITURA E ESCRITA (JSON)
+│   │   │   ├── LeitorJSON.java        // Carrega mapa e enigmas
+│   │   │   └── ExportadorJSON.java    // Cria o relatório final
+│   │   │
+│   │       └── ui/                    // INTERFACE GRÁFICA (Consola)
+│   │           ├── Menu.java
+│   │           └── EditorMapa.java    // Funcionalidade extra pedida no enunciado
+│
+├── lib/                                // 📦 Bibliotecas Externas
+│   └── EstruturasDeDados.jar           // Sua API de Estruturas de Dados (OBRIGATÓRIO USAR ESTA!)
+│
+├── resources/                          // 💾 Ficheiros de Dados, Mapas e Imagens
+│   ├── mapas/
+│   │   ├── mapa_01.json                // Labirintos em JSON
+│   │   └── ...
+│   ├── enigmas/
+│   │   └── questions.json              // Questões dos Enigmas em JSON
+│   └── assets/                         // Imagens e ícones para a UI 2D
+│
+├── tests/                              // 🧪 Pasta para Testes Unitários (Boas Práticas)
+│   ├── core/
+│   └── io/
+│
+└── Main.java                           // Ponto de entrada da aplicação (configura UI e inicia o MotorDoJogo)
