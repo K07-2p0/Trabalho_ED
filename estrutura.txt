@@ -28,7 +28,6 @@ LabirintoDaGloria/
 │   │   ├── io/                        // LEITURA E ESCRITA (JSON)
 │   │   │   ├── LeitorJSON.java        // Carrega mapa e enigmas
 │   │   │   └── ExportadorJSON.java    // Cria o relatório final
-│   │   │
 │   │       └── ui/                    // INTERFACE GRÁFICA (Consola)
 │   │           ├── Menu.java
 │   │           └── EditorMapa.java    // Funcionalidade extra pedida no enunciado
