@@ -77,4 +77,39 @@ public class SalaEnigma extends Divisao {
             return true;
         } else {
             System.out.println(jogador.getNome() + " falhou. Terá de tentar novamente numa jogada futura.");
-            // O MotorJogo deve manter o jogador nesta divisão e passar o turno (retornando
+            // O MotorJogo deve manter o jogador nesta divisão e passar o turno (retornando false).
+            return false;
+        }
+    }
+    
+    /**
+     * (Apenas para demonstração) Simula a verificação da resposta do jogador.
+     * Na implementação final, a lógica de comparação de strings estaria aqui.
+     * @param jogador O jogador que tenta responder.
+     * @return true para simular um acerto, false para simular um erro.
+     */
+    private boolean simularResposta(Jogador jogador) {
+        // Implementação real: compara a resposta do jogador com enigmaAssociado.getRespostaCorreta()
+        // Por exemplo, bots poderiam ter uma probabilidade de acerto.
+        // Para este esqueleto, retornamos um valor fixo para a simulação:
+        return Math.random() > 0.5; 
+    }
+
+    /**
+     * Atualiza o estado da divisão. Se resolvido, nada mais a fazer.
+     */
+    @Override
+    public void atualizarEstado() {
+        // Nada a fazer, o estado muda apenas na tentativa de resolução.
+    }
+
+    // --- Getters ---
+
+    public Enigma getEnigmaAssociado() {
+        return enigmaAssociado;
+    }
+
+    public boolean isEnigmaResolvido() {
+        return enigmaResolvido;
+    }
+}
