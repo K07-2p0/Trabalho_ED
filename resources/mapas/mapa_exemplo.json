@@ -1,0 +1,99 @@
+{
+  "nome_mapa": "Labirinto da Glória Exemplo",
+  "descricao": "Um labirinto de teste com os 4 tipos de divisão.",
+  
+  "versoes": [
+    {
+      "autor": "Gemini AI",
+      "data": "2025-12-05"
+    }
+  ],
+
+
+  "divisoes": [
+    {
+      "id": 1,
+      "tipo": "PontoPartida", 
+      "nome": "Entrada Oeste",
+      "descricao": "Um dos possíveis locais de início para os jogadores.",
+      "ponto_partida": true
+    },
+
+    {
+      "id": 2,
+      "tipo": "SalaTesouro", 
+      "nome": "Sala Central do Tesouro",
+      "descricao": "O objetivo final do jogo, contendo o tesouro.",
+      "ponto_central": true
+    },
+
+    {
+      "id": 3,
+      "tipo": "SalaEnigma", 
+      "nome": "Câmara dos Enigmas",
+      "descricao": "Uma divisão que requer a resolução de um enigma para continuar.",
+      "enigma_id": 101 
+    },
+    
+    {
+      "id": 4,
+      "tipo": "SalaAlavanca", 
+      "nome": "Câmara das Alavancas",
+      "descricao": "Contém uma alavanca que pode desbloquear caminhos.",
+      "escolha_correta": "B",
+      "corredores_controlados_ids": [10, 11] 
+    },
+    
+    {
+      "id": 5,
+      "tipo": "PontoPartida", 
+      "nome": "Entrada Sul",
+      "descricao": "Outro possível ponto de entrada.",
+      "ponto_partida": true
+    }
+  ],
+
+
+  "corredores": [
+    
+    {
+      "id": 7,
+      "origem_id": 1,
+      "destino_id": 3,
+      "descricao": "Um caminho escuro e húmido.",
+      "peso": 1.0,
+      "bloqueado_inicialmente": false,
+      "evento": "NADA" 
+    },
+    
+    {
+      "id": 8,
+      "origem_id": 3,
+      "destino_id": 4,
+      "descricao": "Corredor com risco de efeitos inesperados.",
+      "peso": 2.5,
+      "bloqueado_inicialmente": false,
+      "evento": "RECUAR" 
+    },
+    
+    {
+      "id": 10,
+      "origem_id": 4,
+      "destino_id": 2, 
+      "descricao": "Porta maciça, bloqueada por magia.",
+      "peso": 1.0,
+      "bloqueado_inicialmente": true,
+      "evento": "JOGADA_EXTRA"
+    },
+    
+    {
+      "id": 11,
+      "origem_id": 5,
+      "destino_id": 4,
+      "descricao": "Caminho de volta à câmara das alavancas.",
+      "peso": 1.0,
+      "bloqueado_inicialmente": false,
+      "evento": "NADA"
+    }
+  ]
+}
