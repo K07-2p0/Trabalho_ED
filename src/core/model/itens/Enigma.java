@@ -1,8 +1,6 @@
 package core.model.itens;
 
-import Queues_Stacks.LinkedStack; // Assumindo que a sua API não tem classes de coleções simples como ArrayList,
-                                 // uma Stack pode ser usada como um contentor temporário se necessário, 
-                                 // mas para o Enigma simples, apenas usaremos o array de String.
+import Queues_Stacks.LinkedListStack; 
 
 /**
  * Representa um Enigma que é colocado ao jogador numa SalaEnigma.
