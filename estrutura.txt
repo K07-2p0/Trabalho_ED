@@ -48,3 +48,34 @@ LabirintoDaGloria/
 │   └── io/
 │
 └── Main.java                           // Ponto de entrada da aplicação (configura UI e inicia o MotorDoJogo)
+
+
+
+core/model/divisao/Divisao.java: Esta deve ser a classe abstrata base, representando um vértice (ou nó) no seu grafo. Deve conter atributos básicos como um identificador único, um nome e a sua localização.
+
+core/model/divisao/PontoPartida.java: Uma divisão normal.
+
+core/model/divisao/SalaTesouro.java: O objetivo central e condição de vitória.
+
+core/model/divisao/SalaEnigma.java: Deve ter um Enigma associado e um estado (resolvido/não resolvido).
+
+core/model/divisao/SalaAlavanca.java: Deve ter um estado (ativada/bloqueada) que afeta os corredores adjacentes.
+
+
+Definir as Arestas (Corredor e Enigma)
+
+core/model/itens/Corredor.java: Representa a aresta do seu grafo. Esta classe deverá conter a lógica para os Eventos Aleatórios que ocorrem ao atravessá-lo. Pode ser útil que também armazene o seu estado (bloqueado/desbloqueado) se for afetado por uma alavanca.
+
+core/model/itens/Enigma.java: Classe simples para armazenar a pergunta, possíveis respostas e a resposta correta, lida a partir do JSON.
+
+core/model/itens/Evento.java: Um enum ou classe para representar os diferentes tipos de eventos (ganhar jogadas, trocar de posição, recuar, etc.).
+
+
+
+Passo 3: Os Jogadores
+
+core/model/ator/Jogador.java: Classe abstrata que armazena a posição atual (Divisao), o número de turnos impedido de jogar, e a instância de Historico.
+
+core/model/ator/Historico.java: Classe para registar o percurso, obstáculos enfrentados e efeitos, que será usada para gerar o relatório final JSON.
+
+core/model/ator/JogadorHumano.java e core/model/ator/JogadorBot.java: Classes concretas. O Bot usará a MovimentoStrategy.
