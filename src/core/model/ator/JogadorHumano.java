@@ -1,6 +1,6 @@
 package core.model.ator;
 
-import Lists.ListADT;
+import java.util.List;
 import core.model.divisao.Divisao;
 
 /**
@@ -28,7 +28,7 @@ public class JogadorHumano extends Jogador {
      * @return null, pois a escolha real será tratada pela UI/MotorJogo.
      */
     @Override
-    public Divisao escolherMovimento(ListADT<Divisao> caminhosPossiveis) {
+    public Divisao escolherMovimento(List<Divisao> caminhosPossiveis) {
         // Num cenário real, esta classe pediria à UI para mostrar as opções e esperar pelo input.
         // O MotorJogo deve chamar a UI (Menu.java) para apresentar os 'caminhosPossiveis'
         // e obter a Divisao de destino.
@@ -38,7 +38,7 @@ public class JogadorHumano extends Jogador {
         
         // Simulação de listagem das opções para a UI
         for (int i = 0; i < caminhosPossiveis.size(); i++) {
-            Divisao d = caminhosPossiveis.get(i); // Assume-se que ListADT tem um método get(index)
+            Divisao d = caminhosPossiveis.get(i);
             System.out.println("[" + (i + 1) + "] -> " + d.getNome() + " (ID: " + d.getId() + ")");
         }
         

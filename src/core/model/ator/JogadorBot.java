@@ -1,6 +1,6 @@
 package core.model.ator;
 
-import Lists.ListADT;
+import java.util.List;
 import core.model.divisao.Divisao;
 import java.util.Random; // Usamos a Random do Java, pois não é uma estrutura de dados
 
@@ -34,7 +34,7 @@ public class JogadorBot extends Jogador {
      * @return A Divisao (próximo vértice) para onde o bot irá mover-se.
      */
     @Override
-    public Divisao escolherMovimento(ListADT<Divisao> caminhosPossiveis) {
+    public Divisao escolherMovimento(List<Divisao> caminhosPossiveis) {
         System.out.println("\n" + getNome() + " (Bot) está a calcular o seu movimento...");
 
         if (caminhosPossiveis.isEmpty()) {

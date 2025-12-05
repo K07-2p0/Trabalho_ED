@@ -1,8 +1,7 @@
 package core.model.ator;
 
 import core.model.divisao.Divisao;
-import Lists.DoublyLinkedList; // Usamos a DoublyLinkedList da sua API para o controlo de estado
-import Lists.ListADT;           // Interface para o tipo de retorno
+import java.util.List;
 
 /**
  * Representa um Jogador no Labirinto da Glória.
@@ -36,7 +35,7 @@ public abstract class Jogador {
      * * @param caminhosPossiveis Uma lista (ListADT) das divisões adjacentes disponíveis.
      * @return A Divisao (próximo vértice) para onde o jogador quer mover-se.
      */
-    public abstract Divisao escolherMovimento(ListADT<Divisao> caminhosPossiveis);
+    public abstract Divisao escolherMovimento(List<Divisao> caminhosPossiveis);
 
     // --- Métodos de Controlo de Turnos ---
 

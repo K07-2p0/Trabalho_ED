@@ -1,7 +1,7 @@
 package core.model.ator;
 
-import Lists.DoublyLinkedList; // API: Lista para manter a ordem cronológica
-import Lists.ListADT;           // Interface
+import java.util.LinkedList;
+import java.util.List;
 import core.model.divisao.Divisao;
 import core.model.itens.Enigma;
 import core.model.itens.Evento;
@@ -14,11 +14,11 @@ import core.model.itens.Evento;
 public class Historico {
 
     private final String nomeJogador;
-    // Usamos a lista duplamente ligada (DoublyLinkedList) da API para registar logs cronológicos
-    private final ListADT<String> logs; 
-    private final ListADT<Divisao> percurso;
-    private final ListADT<Enigma> enigmasResolvidos;
-    private final ListADT<Evento> eventosAplicados;
+    // Usamos listas Java para registar logs cronológicos
+    private final List<String> logs; 
+    private final List<Divisao> percurso;
+    private final List<Enigma> enigmasResolvidos;
+    private final List<Evento> eventosAplicados;
 
     /**
      * Construtor do Histórico.
@@ -26,28 +26,28 @@ public class Historico {
      */
     public Historico(String nomeJogador) {
         this.nomeJogador = nomeJogador;
-        // As listas da sua API são usadas como a estrutura de dados para armazenamento
-        this.logs = new DoublyLinkedList<>(); 
-        this.percurso = new DoublyLinkedList<>();
-        this.enigmasResolvidos = new DoublyLinkedList<>();
-        this.eventosAplicados = new DoublyLinkedList<>();
+        // Usamos LinkedList do Java para manter a ordem cronológica
+        this.logs = new LinkedList<>(); 
+        this.percurso = new LinkedList<>();
+        this.enigmasResolvidos = new LinkedList<>();
+        this.eventosAplicados = new LinkedList<>();
     }
     
     // --- Métodos de Registo ---
 
     public void adicionarMovimento(Divisao novaDivisao) {
-        this.percurso.addToRear(novaDivisao);
-        this.logs.addToRear(nomeJogador + " moveu-se para " + novaDivisao.getNome());
+        this.percurso.add(novaDivisao);
+        this.logs.add(nomeJogador + " moveu-se para " + novaDivisao.getNome());
     }
 
     public void adicionarEnigmaResolvido(Enigma enigma) {
-        this.enigmasResolvidos.addToRear(enigma);
-        this.logs.addToRear(nomeJogador + " resolveu o Enigma #" + enigma.getId());
+        this.enigmasResolvidos.add(enigma);
+        this.logs.add(nomeJogador + " resolveu o Enigma #" + enigma.getId());
     }
     
     public void adicionarEventoAplicado(Evento evento) {
-        this.eventosAplicados.addToRear(evento);
-        this.logs.addToRear("Evento aplicado: " + evento.getDescricao());
+        this.eventosAplicados.add(evento);
+        this.logs.add("Evento aplicado: " + evento.getDescricao());
     }
     
     // --- Getters para Exportação (JSON) ---
@@ -56,19 +56,19 @@ public class Historico {
      * Retorna a lista completa de logs cronológicos para o relatório.
      * @return Uma lista (ListADT) de strings com o registo de eventos.
      */
-    public ListADT<String> getLogs() {
+    public List<String> getLogs() {
         return logs;
     }
     
-    public ListADT<Divisao> getPercurso() {
+    public List<Divisao> getPercurso() {
         return percurso;
     }
 
-    public ListADT<Enigma> getEnigmasResolvidos() {
+    public List<Enigma> getEnigmasResolvidos() {
         return enigmasResolvidos;
     }
 
-    public ListADT<Evento> getEventosAplicados() {
+    public List<Evento> getEventosAplicados() {
         return eventosAplicados;
     }
 }
