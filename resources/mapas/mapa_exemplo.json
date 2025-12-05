@@ -1,99 +1,229 @@
 {
-  "nome_mapa": "Labirinto da Glória Exemplo",
-  "descricao": "Um labirinto de teste com os 4 tipos de divisão.",
-  
-  "versoes": [
+  "name": "LabirintoDaGloria/",
+  "type": "folder",
+  "children": [
     {
-      "autor": "Ana Oliveira",
-      "data": "2025-12-05"
-    }
-  ],
-
-
-  "divisoes": [
-    {
-      "id": 1,
-      "tipo": "PontoPartida", 
-      "nome": "Entrada Oeste",
-      "descricao": "Um dos possíveis locais de início para os jogadores.",
-      "ponto_partida": true
+      "name": "src/",
+      "type": "folder",
+      "description": "Código-fonte principal",
+      "children": [
+        {
+          "name": "core/",
+          "type": "folder",
+          "description": "Pacotes de domínio e lógica",
+          "children": [
+            {
+              "name": "model/",
+              "type": "folder",
+              "description": "ENTIDADES (O \"Quem\" e o \"O quê\")",
+              "children": [
+                {
+                  "name": "divisao/",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "name": "Divisao.java",
+                      "type": "file",
+                      "description": "(Abstract) Representa um vértice (Sala)"
+                    },
+                    {
+                      "name": "PontoPartida.java",
+                      "type": "file",
+                      "description": "Divisão comum (Vértice)"
+                    },
+                    {
+                      "name": "SalaTesouro.java",
+                      "type": "file",
+                      "description": "Objetivo final"
+                    },
+                    {
+                      "name": "SalaEnigma.java",
+                      "type": "file",
+                      "description": "Tem uma pergunta"
+                    },
+                    {
+                      "name": "SalaAlavanca.java",
+                      "type": "file",
+                      "description": "Controla Arestas (Corredores)"
+                    }
+                  ]
+                },
+                {
+                  "name": "itens/",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "name": "Corredor.java",
+                      "type": "file",
+                      "description": "Aresta (Edge) do grafo"
+                    },
+                    {
+                      "name": "Enigma.java",
+                      "type": "file",
+                      "description": "Pergunta/Resposta/Pontos"
+                    },
+                    {
+                      "name": "Evento.java",
+                      "type": "file",
+                      "description": "Ações especiais no Corredor"
+                    }
+                  ]
+                },
+                {
+                  "name": "ator/",
+                  "type": "folder",
+                  "children": [
+                    {
+                      "name": "Jogador.java",
+                      "type": "file",
+                      "description": "(Abstract) Classe base"
+                    },
+                    {
+                      "name": "JogadorHumano.java",
+                      "type": "file"
+                    },
+                    {
+                      "name": "JogadorBot.java",
+                      "type": "file"
+                    },
+                    {
+                      "name": "Historico.java",
+                      "type": "file",
+                      "description": "Logs de ações"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "game/",
+              "type": "folder",
+              "description": "LÓGICA (O motor do jogo)",
+              "children": [
+                {
+                  "name": "MotorJogo.java",
+                  "type": "file",
+                  "description": "Controla turnos e regras"
+                },
+                {
+                  "name": "GestorMapa.java",
+                  "type": "file",
+                  "description": "Gere o Grafo e suas conexões"
+                },
+                {
+                  "name": "MovimentoStrategy.java",
+                  "type": "file",
+                  "description": "Define o comportamento do Bot"
+                }
+              ]
+            },
+            {
+              "name": "io/",
+              "type": "folder",
+              "description": "LEITURA E ESCRITA (JSON)",
+              "children": [
+                {
+                  "name": "LeitorJSON.java",
+                  "type": "file",
+                  "description": "Carrega dados (mapa, enigmas)"
+                },
+                {
+                  "name": "ExportadorJSON.java",
+                  "type": "file",
+                  "description": "Cria relatórios/ficheiros de saída"
+                }
+              ]
+            },
+            {
+              "name": "ui/",
+              "type": "folder",
+              "description": "**INTERFACE DE CONSOLA (Texto)**",
+              "children": [
+                {
+                  "name": "Menu.java",
+                  "type": "file",
+                  "description": "Apresenta opções e recebe input via teclado"
+                },
+                {
+                  "name": "EditorMapa.java",
+                  "type": "file",
+                  "description": "Ferramenta de criação/edição baseada em texto"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
-
     {
-      "id": 2,
-      "tipo": "SalaTesouro", 
-      "nome": "Sala Central do Tesouro",
-      "descricao": "O objetivo final do jogo, contendo o tesouro.",
-      "ponto_central": true
+      "name": "lib/",
+      "type": "folder",
+      "description": "📦 Bibliotecas Externas",
+      "children": [
+        {
+          "name": "EstruturasDeDados.jar",
+          "type": "file",
+          "description": "API de Estruturas de Dados (Grafo)"
+        }
+      ]
     },
-
     {
-      "id": 3,
-      "tipo": "SalaEnigma", 
-      "nome": "Câmara dos Enigmas",
-      "descricao": "Uma divisão que requer a resolução de um enigma para continuar.",
-      "enigma_id": 101 
+      "name": "resources/",
+      "type": "folder",
+      "description": "💾 Ficheiros de Dados",
+      "children": [
+        {
+          "name": "mapas/",
+          "type": "folder",
+          "children": [
+            {
+              "name": "mapa_01.json",
+              "type": "file",
+              "description": "Definição do labirinto"
+            },
+            {
+              "name": "...",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "enigmas/",
+          "type": "folder",
+          "children": [
+            {
+              "name": "questions.json",
+              "type": "file",
+              "description": "Base de dados de perguntas e respostas"
+            }
+          ]
+        },
+        {
+          "name": "assets/",
+          "type": "folder",
+          "description": "Reservado para ícones se a UI fosse visual"
+        }
+      ]
     },
-    
     {
-      "id": 4,
-      "tipo": "SalaAlavanca", 
-      "nome": "Câmara das Alavancas",
-      "descricao": "Contém uma alavanca que pode desbloquear caminhos.",
-      "escolha_correta": "B",
-      "corredores_controlados_ids": [10, 11] 
+      "name": "tests/",
+      "type": "folder",
+      "description": "🧪 Testes Unitários",
+      "children": [
+        {
+          "name": "core/",
+          "type": "folder"
+        },
+        {
+          "name": "io/",
+          "type": "folder"
+        }
+      ]
     },
-    
     {
-      "id": 5,
-      "tipo": "PontoPartida", 
-      "nome": "Entrada Sul",
-      "descricao": "Outro possível ponto de entrada.",
-      "ponto_partida": true
-    }
-  ],
-
-
-  "corredores": [
-    
-    {
-      "id": 7,
-      "origem_id": 1,
-      "destino_id": 3,
-      "descricao": "Um caminho escuro e húmido.",
-      "peso": 1.0,
-      "bloqueado_inicialmente": false,
-      "evento": "NADA" 
-    },
-    
-    {
-      "id": 8,
-      "origem_id": 3,
-      "destino_id": 4,
-      "descricao": "Corredor com risco de efeitos inesperados.",
-      "peso": 2.5,
-      "bloqueado_inicialmente": false,
-      "evento": "RECUAR" 
-    },
-    
-    {
-      "id": 10,
-      "origem_id": 4,
-      "destino_id": 2, 
-      "descricao": "Porta maciça, bloqueada por magia.",
-      "peso": 1.0,
-      "bloqueado_inicialmente": true,
-      "evento": "JOGADA_EXTRA"
-    },
-    
-    {
-      "id": 11,
-      "origem_id": 5,
-      "destino_id": 4,
-      "descricao": "Caminho de volta à câmara das alavancas.",
-      "peso": 1.0,
-      "bloqueado_inicialmente": false,
-      "evento": "NADA"
+      "name": "Main.java",
+      "type": "file",
+      "description": "Ponto de entrada da aplicação"
     }
   ]
 }
