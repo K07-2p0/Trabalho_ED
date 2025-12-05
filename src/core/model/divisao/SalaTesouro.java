@@ -49,8 +49,8 @@ public class SalaTesouro extends Divisao {
     /**
      * Implementação do método abstrato da classe Divisao.
      * O estado é simples: se foi conquistada ou não.
-     */
-    @sOverride
+     */    @Override
+    
     public void atualizarEstado() {
         // Simplesmente garante que o estado pode ser atualizado se necessário,
         // mas para esta classe a mudança mais importante ocorre em processarEntrada.
