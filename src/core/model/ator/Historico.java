@@ -1,7 +1,7 @@
 package core.model.ator;
 
-import java.util.LinkedList;
-import java.util.List;
+import Lists.DoublyLinkedList;
+import Lists.ListADT;
 import core.model.divisao.Divisao;
 import core.model.itens.Enigma;
 import core.model.itens.Evento;
@@ -14,11 +14,11 @@ import core.model.itens.Evento;
 public class Historico {
 
     private final String nomeJogador;
-    // Usamos listas Java para registar logs cronológicos
-    private final List<String> logs; 
-    private final List<Divisao> percurso;
-    private final List<Enigma> enigmasResolvidos;
-    private final List<Evento> eventosAplicados;
+    // Usamos listas da API para registar logs cronológicos
+    private final ListADT<String> logs; 
+    private final ListADT<Divisao> percurso;
+    private final ListADT<Enigma> enigmasResolvidos;
+    private final ListADT<Evento> eventosAplicados;
 
     /**
      * Construtor do Histórico.
@@ -26,11 +26,11 @@ public class Historico {
      */
     public Historico(String nomeJogador) {
         this.nomeJogador = nomeJogador;
-        // Usamos LinkedList do Java para manter a ordem cronológica
-        this.logs = new LinkedList<>(); 
-        this.percurso = new LinkedList<>();
-        this.enigmasResolvidos = new LinkedList<>();
-        this.eventosAplicados = new LinkedList<>();
+        // Usamos DoublyLinkedList da API para manter a ordem cronológica
+        this.logs = new DoublyLinkedList<>(); 
+        this.percurso = new DoublyLinkedList<>();
+        this.enigmasResolvidos = new DoublyLinkedList<>();
+        this.eventosAplicados = new DoublyLinkedList<>();
     }
     
     // --- Métodos de Registo ---
@@ -56,19 +56,19 @@ public class Historico {
      * Retorna a lista completa de logs cronológicos para o relatório.
      * @return Uma lista (ListADT) de strings com o registo de eventos.
      */
-    public List<String> getLogs() {
+    public ListADT<String> getLogs() {
         return logs;
     }
     
-    public List<Divisao> getPercurso() {
+    public ListADT<Divisao> getPercurso() {
         return percurso;
     }
 
-    public List<Enigma> getEnigmasResolvidos() {
+    public ListADT<Enigma> getEnigmasResolvidos() {
         return enigmasResolvidos;
     }
 
-    public List<Evento> getEventosAplicados() {
+    public ListADT<Evento> getEventosAplicados() {
         return eventosAplicados;
     }
 }

@@ -1,6 +1,6 @@
 package core.model.ator;
 
-import java.util.List;
+import Lists.ListADT;
 import core.model.divisao.Divisao;
 
 /**
@@ -28,7 +28,7 @@ public class JogadorHumano extends Jogador {
      * @return null, pois a escolha real será tratada pela UI/MotorJogo.
      */
     @Override
-    public Divisao escolherMovimento(List<Divisao> caminhosPossiveis) {
+    public Divisao escolherMovimento(ListADT<Divisao> caminhosPossiveis) {
         // Num cenário real, esta classe pediria à UI para mostrar as opções e esperar pelo input.
         // O MotorJogo deve chamar a UI (Menu.java) para apresentar os 'caminhosPossiveis'
         // e obter a Divisao de destino.

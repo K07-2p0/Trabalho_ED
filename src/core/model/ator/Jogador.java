@@ -1,7 +1,7 @@
 package core.model.ator;
 
 import core.model.divisao.Divisao;
-import java.util.List;
+import Lists.ListADT;
 
 /**
  * Representa um Jogador no Labirinto da Glória.
@@ -35,7 +35,7 @@ public abstract class Jogador {
      * * @param caminhosPossiveis Uma lista (ListADT) das divisões adjacentes disponíveis.
      * @return A Divisao (próximo vértice) para onde o jogador quer mover-se.
      */
-    public abstract Divisao escolherMovimento(List<Divisao> caminhosPossiveis);
+    public abstract Divisao escolherMovimento(ListADT<Divisao> caminhosPossiveis);
 
     // --- Métodos de Controlo de Turnos ---
 
