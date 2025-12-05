@@ -1,7 +1,5 @@
 package core.model.itens;
 
-import Queues_Stacks.LinkedListStack; 
-
 /**
  * Representa um Enigma que é colocado ao jogador numa SalaEnigma.
  * Guarda a pergunta, as opções de resposta e a resposta correta.
