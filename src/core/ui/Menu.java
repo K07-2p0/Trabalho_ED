@@ -1,7 +1,6 @@
 package core.ui;
 
 
-import src.core.game.MotorJogo;
 import java.util.Scanner;
 
 /**
