@@ -5,7 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
-public class JsonExporter {
+public class ExportadorJSON {
 	/**
 	 * Exporta o conteúdo de um ficheiro JSON para um ficheiro TXT.
 	 * @param jsonPath Caminho do ficheiro JSON de origem

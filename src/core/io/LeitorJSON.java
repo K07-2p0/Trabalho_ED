@@ -8,11 +8,11 @@ import java.util.*;
  * Parser JSON manual sem uso de bibliotecas externas.
  * Suporta objetos, arrays, strings, números, booleanos e null.
  */
-public class JsonParser {
+public class LeitorJSON {
     private String json;
     private int pos;
 
-    public JsonParser(String json) {
+    public LeitorJSON(String json) {
         this.json = json;
         this.pos = 0;
     }
@@ -29,7 +29,7 @@ public class JsonParser {
      * Faz parse de uma String JSON
      */
     public static Object parse(String json) {
-        JsonParser parser = new JsonParser(json);
+        LeitorJSON parser = new LeitorJSON(json);
         return parser.parseValue();
     }
 
